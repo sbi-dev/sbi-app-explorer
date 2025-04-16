@@ -201,6 +201,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
+    // Force scrollbar to appear when hovering over controls-left
+    const controlsLeft = document.querySelector('.controls-left');
+    if (controlsLeft) {
+        controlsLeft.addEventListener('mouseenter', () => {
+            const scrollLeft = controlsLeft.scrollLeft;
+            // Trigger a tiny scroll event to "wake up" the scrollbar
+            controlsLeft.scrollLeft = scrollLeft + 1;
+            setTimeout(() => {
+                controlsLeft.scrollLeft = scrollLeft;
+            }, 10);
+        });
+    }
+
     const layout = {
         title: 'sbi applications',
         font: {
