@@ -1,70 +1,25 @@
-# SBI Applications Widget
+# SBI application explorer
 
-Interactive visualization of Simulation-Based Inference (SBI) applications.
-
-
-1. Create a `.streamlit/secrets.toml` file with your API keys:
-   ```toml
-   [google_sheets]
-   api_key = "YOUR_GOOGLE_API_KEY"
-   spreadsheet_id = "YOUR_SPREADSHEET_ID"
-   range = "'dev'!B1:P100000"
-   ```
-
-## Running the App Locally
-
-### Streamlit Version
-
-1. Install dependencies:
-   ```bash
-   pip install streamlit requests
-   ```
-
-2. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
-
-3. Access at http://localhost:8501
-
-### Node.js Version
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Run the server:
-   ```bash
-   node app.js
-   ```
-
-3. Access at http://localhost:3000
-
-## Deployment
-
-### Streamlit Cloud 
-
-1. Sync with GitHub
-2. Deploy on [Streamlit Cloud](https://streamlit.io/cloud)
-3. Add secrets in Streamlit Cloud settings:
+<img width="1355" alt="image" src="https://github.com/user-attachments/assets/c8e4a0e4-73c0-40ea-ae2d-a6a0cb46f092" />
 
 
-## Embedding in Other Websites
+About the SBI application explorer
+----------------------------------
 
-```html
-<iframe
-  src="https://your-app-url.streamlit.app/?embed=true"
-  width="100%"
-  height="800px"
-  style="border:none;"
-></iframe>
-```
+The SBI application explorer shows how SBI is applied across different research fields and data types, in particular with respect to the number of parameters and the number of simulations used. This is to gain a quick overview over existing applications, and the right settings for your own work.
 
-## Development and Customization
+Features
+--------
+- Filter by research area, data type, SBI method, or toolbox
+- Search for specific papers
+- Hover over data points to show paper details
+- Toggle labels and adjust marker size based on data dimensionality
 
-- **Modify visualization**: Edit files in the `public/` directory
-- **Update data processing**: Edit the data handling in either `app.py` or `app.js`
-- **Change styling**: Modify `public/style.css` or add inline styles
-- **Add features**: Both versions use the same frontend code in `public/view.js`
-  
+
+Contributing
+-----------
+
+The data comes from a curated list of SBI papers.
+
+You can submit new applications through our 
+[submission form](https://docs.google.com/forms/d/e/1FAIpQLSeu7Er272IKAnTxBX6osqcbrdvG2ny-aIybv6FDIFLLe8SSoA/viewform).
