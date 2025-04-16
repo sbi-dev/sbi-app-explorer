@@ -48,7 +48,7 @@ button, select, input, .xtick text, .ytick text, .legend text {
 /* Clean search box styling */
 #search-box {
   padding: 3px 8px;
-  border: 2px solid #e0e0e0;
+  border: 1px solid #e0e0e0; /* Changed from 2px to fix search */
   border-radius: 4px;
   width: 200px;
   height: 26px; /* Match button height */
@@ -187,6 +187,11 @@ button, select, input, .xtick text, .ytick text, .legend text {
 /* Update any existing typography rules */
 body, html {
   font-size: 10px; /* Base font size */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
 /* Make the logo a separate element outside of scrollable area */
@@ -289,18 +294,17 @@ select::-ms-expand {
   max-width: 300px;
 }
 
-/* Search box styling */
+/* Search box styling - FIXED */
 #search-box {
   padding: 3px 8px;
-  border: 2px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
   width: 200px;
   height: 26px;
   box-sizing: border-box;
   transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  position: relative; /* Add position relative */
-  z-index: 2; /* Ensure it's above any potential overlapping elements */
+  font-size: 11px;
 }
 
 #search-box:focus {
@@ -309,26 +313,24 @@ select::-ms-expand {
   box-shadow: 0 1px 3px rgba(24, 80, 160, 0.6);
 }
 
+/* FIXED Search container styling */
 .search-container {
   position: relative;
   display: inline-block;
-  mask-image: none;
-  -webkit-mask-image: none;
-  margin-left: 5px; /* Add margin to prevent overlap */
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  z-index: 9999; /* Add high z-index to container */
 }
 
 .search-results-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: fixed;
   max-height: 300px;
   overflow-y: auto;
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 9999; /* Very high z-index */
   display: none;
   margin-top: 5px;
   font-size: 12px;
@@ -466,18 +468,27 @@ select::-ms-expand {
   }
 }
 
+/* Chart container */
 #chart-container {
   flex-grow: 1;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to visible */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Add position */
+  z-index: 1; /* Lower z-index than search */
 }
 
 #chart {
   width: 100%;
   height: 100%;
 }
+/* Make sure controls don't create new stacking context with transforms */
+#controls, .controls-right, .controls-left {
+  position: relative;
+  z-index: 9998; /* High z-index but below dropdown */
+}
+
