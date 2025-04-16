@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         },
         yaxis: { 
             title: {
-                text: 'number of simulations (log scale)',
+                text: 'number of simulations',
                 standoff: 15,
                 font: { size: 13 }
             },
