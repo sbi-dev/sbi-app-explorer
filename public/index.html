@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SBI-Applications</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/141135423?v=4">
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="controls">
+            <div class="controls-left">
+                <img src="https://avatars.githubusercontent.com/u/141135423?v=4" alt="Logo" class="logo">
+                <select id="category-dropdown">
+                    <option value="research area">research area</option>
+                    <option value="data type">data type</option>
+                    <option value="SBI software package">toolbox</option>
+                    <option value="SBI method">method</option>
+                </select>
+                
+                <!-- Buttons with lowercase labels -->
+                <button id="toggle-labels-button">toggle labels</button>
+                <button id="toggle-size-button">toggle size for dimensionality</button>
+                <button id="sheet-link-button">view google sheet</button>
+                <button id="submit-button">submit new entry</button>
+            </div>
+            
+            <div class="controls-right">
+                <div class="search-container">
+                    <input type="text" id="search-box" placeholder="search papers...">
+                    <div id="search-results" class="search-results-dropdown"></div>
+                </div>
+                <button id="search-button">search</button>
+                <button id="reset-search">reset</button>
+            </div>
+        </div>
+        <div id="chart-container">
+            <div id="chart"></div>
+        </div>
+        <div id="hover-info"></div>
+    </div>
+    <script src="view.js"></script>
+</body>
+</html>

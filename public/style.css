@@ -1,0 +1,543 @@
+/* Typography settings - consistent font families and selective lowercase */
+body, html, button, select, input {
+  font-family: Arial, sans-serif;
+}
+
+/* Two-size typography system with increased sizes */
+button, select, input, .xtick text, .ytick text, .legend text {
+  font-size: 11px; /* Increased from 10px */
+}
+
+.gtitle, .xtitle, .ytitle {
+  font-size: 13px; /* Increased from 12px */
+}
+
+/* Selective lowercase for UI labels only */
+#controls button, #controls select, #category-dropdown option {
+  text-transform: lowercase;
+}
+
+/* Keep normal casing for metadata and search results */
+#hover-info, .search-results-dropdown, .search-result-item {
+  text-transform: none;
+}
+
+/* Consistent height for all control elements */
+#controls button, #controls select, #controls input {
+  padding: 3px 8px;
+  border: none;
+  border-radius: 4px;
+  height: 26px; /* Slightly taller for better readability */
+  line-height: 20px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+/* Button styling with consistent height */
+#controls button, #controls select {
+  background-color: #1850A0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#controls button:hover, #controls select:hover {
+  background-color: #12407D;
+}
+
+/* Clean search box styling */
+#search-box {
+  padding: 3px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 200px;
+  height: 26px; /* Match button height */
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#search-box:focus {
+  outline: none;
+  border-color: #1850A0;
+  box-shadow: 0 1px 3px rgba(24, 80, 160, 0.2);
+}
+
+/* Control containers with vertical alignment */
+.controls-left, .controls-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Search results styling with original casing */
+.search-results-dropdown {
+  font-size: 11px;
+}
+
+.result-citation, .result-title, .result-journal {
+  text-transform: none;
+}
+
+* {
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  font-size: 10px; /* Base font size */
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+  min-width: 0;
+  overflow: visible;
+}
+
+#controls button {
+  padding: 3px 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  background-color: #1850A0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: lowercase;
+}
+
+#controls button:hover {
+  background-color: #12407D;
+}
+
+.logo {
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+#category-dropdown, button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Modern button styling */
+button, #controls select {
+  padding: 6px 12px;
+  background-color: #1850A0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2px;
+}
+
+button:hover, #controls select:hover {
+  background-color: #1345A9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:active, #controls select:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#chart-container {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+}
+
+#hover-info {
+  position: absolute;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-width: 300px;
+}
+
+/* Search box styling */
+#search-box {
+  padding: 3px 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 10px;
+  width: 200px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+#search-box:focus {
+  outline: none;
+  border-color: #1850A0;
+  box-shadow: 0 1px 3px rgba(24, 80, 160, 0.6);
+}
+
+/* Improved controls layout with scrolling rather than wrapping */
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+  min-width: 0;
+  overflow: visible;
+}
+
+/* Make left controls scrollable without wrapping */
+.controls-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding-bottom: 5px;
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+/* Hide scrollbar in webkit browsers but keep functionality */
+.controls-left::-webkit-scrollbar {
+  height: 4px;
+}
+
+.controls-left::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.controls-left::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Ensure buttons maintain consistent height */
+.controls-left button, .controls-left select, .controls-left img {
+  flex-shrink: 0;
+  height: 36px;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+/* Adjust logo to match button height */
+.logo {
+  height: 60px;
+  flex-shrink: 0;
+}
+
+/* Keep right controls compact */
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+  margin-top: 5px;
+  font-size: 12px;
+  width: 300px;
+}
+
+.search-results-dropdown.active {
+  display: block;
+}
+
+.search-result-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.4;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-citation {
+  font-weight: 600;
+  color: #1850A0;
+}
+
+.result-title {
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.result-journal {
+  margin-top: 2px;
+  color: #555;
+}
+
+.search-result-item:hover {
+  background-color: #f7f9fe;
+}
+
+.no-results {
+  padding: 12px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* Print styles to prevent cropping */
+@media print {
+  /* Reset dimensions and overflow */
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* Ensure container fits within page */
+  #app-container {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* Ensure chart container fits within page */
+  #chart-container {
+    width: 100% !important;
+    height: 6in !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+  
+  /* Ensure chart itself fits */
+  #chart {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+  
+  /* Keep the control buttons visible */
+  .controls-left {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    flex: 1 !important;
+    overflow: visible !important;
+  }
+    
+  /* Ensure buttons look good in print */
+  button, select {
+    border: 1px solid #000 !important;
+    color: #000 !important;
+    background-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+    
+  /* Add page break control */
+  #controls {
+    page-break-after: avoid !important;
+  }
+  
+  #chart-container {
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  /* Make controls fit better for print */
+  .controls-left button, .controls-left select {
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Hide right controls in print */
+  .controls-right, #hover-info {
+    display: none !important;
+  }
+  
+  /* Typography for printed output */
+  body, html, button, select, input, text, .xtick text, .ytick text, .legend text {
+    font-family: Arial, sans-serif !important;
+    font-size: 10px !important;
+    text-transform: lowercase !important;
+  }
+  
+  .gtitle, .xtitle, .ytitle {
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+    text-transform: lowercase !important;
+  }
+}
+
+/* Better responsive behavior at various screen sizes */
+@media (max-width: 1200px) {
+  #controls {
+    flex-wrap: wrap;
+  }
+  
+  .controls-left, .controls-right {
+    margin-bottom: 10px;
+  }
+  
+  .controls-right {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .controls-left {
+    flex-wrap: wrap;
+  }
+}
+
+/* Update any existing typography rules */
+body, html {
+  font-size: 10px; /* Base font size */
+}
+
+.logo {
+  height: 35px;
+}
+
+/* Ensure all controls including select dropdown have consistent styling */
+#controls button, #controls select, button, select {
+  padding: 3px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  height: 26px;
+  line-height: 20px;
+  box-sizing: border-box;
+  background-color: #1850A0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: lowercase;
+  vertical-align: middle;
+}
+
+/* Hover states */
+#controls button:hover, #controls select:hover, button:hover, select:hover {
+  background-color: #12407D;
+}
+
+/* Fix select appearance across browsers - with adjusted padding */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 25px 0 8px; 
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 5px center; /* Positioned slightly closer */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Specifically target the category dropdown */
+#category-dropdown {
+  font-size: 11px;
+  height: 26px;
+  text-transform: lowercase;
+  background-color: #1850A0;
+  color: white;
+  min-width: 108px; /* Slightly smaller minimum width */
+  width: auto;
+}
+
+/* Ensure consistent padding for buttons too */
+button {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Firefox specific fix */
+select::-ms-expand {
+  display: none;
+}
+
+/* Control containers with vertical alignment */
+.controls-left, .controls-right {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Consistent spacing */
+}
+
+/* Fix for vertical alignment */
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
